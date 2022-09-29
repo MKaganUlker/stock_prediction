@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>
+        STOCK PREDICTION WEB APP
+    </title>
+</head>
+<body>
+    {{a}}
+    <h2>STOCK PREDICTION</h2>
+
+    <br>
+    <form method="post" enctype="multipart/form-data" action="predictMPG1">
+ {% csrf_token %}
+ 
+
+ <br>
+
+
+<button type="button"id="switch">Switch Countries</button>
+
+ <div id="mk_list" hidden>
+ <form action="/action_page.php" method="get">
+    <label for="browser">Choose your Macedonian Stock from the list:</label>
+    <input list="mk_stocks" name="mk_stock" id="mk_stock">
+    <datalist id="mk_stocks">
+      <option value="ALK">
+      <option value="KMB">
+      <option value="MPT">
+      <option value="TEL">
+      <option value="TNB">
+      <option value="TTK">
+      <option value="GRNT">
+      <option value="MTUR">
+      <option value="SBT">
+      <option value="SBT">
+    </datalist>
+    <input type="submit" value="submit">
+  </form>
+</div>
+<div id="tr_list">
+    <form action="/action_page.php" method="get">
+        <label for="browser">Choose your Turkish Stock from the list:</label>
+        <input list="tr_stocks" name="tr_stock" id="tr_stock">
+        <datalist id="tr_stocks">
+          <option value="Akbank TAS">
+          <option value="Arcelik AS">
+          <option value="Aselsan">
+          <option value="BIM Magazalar">
+          <option value="Dogan Holding">
+          <option value="Emlak Konut GYO">
+          <option value="Erdemir">
+          <option value="Ford Otosan">
+          <option value="Garanti Bank">
+          <option value="Gubretas">
+          <option value="Kardemir D">
+          <option value="Koc Holding">
+          <option value="Koza Altin">
+          <option value="Koza Anadolu">
+          <option value="Pegasus">
+          <option value="Petkim">
+          <option value="Sabanci Holding">
+          <option value="SASA Polyester">
+          <option value="Sisecam">
+          <option value="TAV Havalimanlar">
+          <option value="Tekfen Holding">
+          <option value="THY">
+          <option value="Tofas">
+          <option value="Tupras Turkiye">
+          <option value="Turk Telekom">
+          <option value="Turkcell">
+          <option value="Turkiye Halk Bk">
+          <option value="Turkiye Is Bankasi C">
+          <option value="Vestel">
+          <option value="Yapi ve Kredi Bankasi">                
+        </datalist>
+        <input type="submit" value="submit">
+      </form>
+    </div>
+    
+ <br>
+<h1>the selected stock is {{stock}}</h1>
+</form>
+<script type="text/javascript">
+	const div1 = document.getElementById("mk_list"),
+    div2 = document.getElementById("tr_list")
+	document.getElementById("switch").addEventListener("click", function() {
+		// hide element: element.hidden = true;
+		// show element: element.hidden = false;
+		div1.hidden = !div1.hidden;
+        div2.hidden = !div2.hidden;
+	});
+</script>
+
+
+</body>
+</html>
